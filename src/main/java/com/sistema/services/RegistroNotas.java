@@ -5,7 +5,6 @@ import com.sistema.model.ResultadoExamen;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Servicio para gestionar el registro de notas.
@@ -37,7 +36,7 @@ public class RegistroNotas implements IRegistroNotas {
         return resultados.stream()
                 .filter(r -> r.getEstudiante().getNombre()
                         .equalsIgnoreCase(nombreEstudiante))
-                .collect(Collectors.toList());
+                .toList(); // ✅ CORRECCIÓN: Usar toList() en lugar de collect(Collectors.toList())
     }
 
     @Override
